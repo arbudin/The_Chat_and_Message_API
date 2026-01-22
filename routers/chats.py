@@ -3,7 +3,7 @@ from typing import List
 from fastapi import APIRouter, HTTPException, Query
 from fastapi.params import Depends
 from sqlalchemy.orm import Session
-
+from db.logger import logger
 from db.database import get_db
 from db.models import Chat, Message
 from schemas.chat import ChatCreate, ChatResponse
@@ -39,6 +39,18 @@ def get_chat_with_messages(
         created_at=chat.created_at,
         messages=messages_response
     )
+
+# создать чат
+@router.post("/", response_model=ChatResponse)
+def create_chat(chat: ChatCreate, db: Session = Depends(get_db)):
+    new_chat = Chat(
+        title=chat.title.strip()
+    )
+    db.add(new_chat)
+    db.commit()
+    db.refresh(new_chat)
+    logger.info("Создан новый чат: title='%s'", chat.title)
+    return new_chat
 
 # добавить сообщение по указанному chat_id
 @router.post("/{chat_id}/messages/", response_model=MessageResponse)
