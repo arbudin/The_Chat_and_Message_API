@@ -1,0 +1,39 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.pdb
+
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+logs/
+*.out
+
+# Databases
+*.sqlite3
+*.db
+*.dump
+
+# Docker
+docker-compose.override.yml
+*.env.docker
+*.pid
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# System / OS
+.DS_Store
+Thumbs.db
