@@ -19,6 +19,7 @@ venv/
 *.log
 logs/
 *.out
+chat_api.log
 
 # Databases
 *.sqlite3
