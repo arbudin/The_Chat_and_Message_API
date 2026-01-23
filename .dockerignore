@@ -1,8 +1,25 @@
 # Игнорируем виртуальное окружение
 .venv/
+venv/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
 
 # Игнорируем локальные настройки и приватные файлы
 .env
 *.log
+.git
+.gitignore
+
+# Игнорируем тесты и документацию
+tests/
+*.md
+README.md
+
+# Игнорируем IDE файлы
+.vscode/
+.idea/
+*.swp
+*.swo
