@@ -58,13 +58,13 @@ The_Chat_and_Message_API/
    cd The_Chat_and_Message_API
    ```
 
-2. **Создайте файл `.env.docker`** (если его нет):
+2. **Создайте файл `.env.docker`** (если его нет и вставьте данные вашей БД):
    ```env
-   DB_USER=postgres
-   DB_PASSWORD=12345
+   DB_USER=user
+   DB_PASSWORD=pass
    DB_HOST=db
    DB_PORT=5432
-   DB_NAME=chats_and_messages_db
+   DB_NAME=db_name
    RUNNING_IN_DOCKER=true
    ```
 
